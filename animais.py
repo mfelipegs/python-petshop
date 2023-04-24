@@ -14,6 +14,9 @@ fgColor = "white"
 textColor = "#F0FEEC"
 tela.configure(background=bgColor)
 
+var = StringVar()
+var.set("m")
+
 if platform == "linux":
     # linux
     comando = "python3"
@@ -57,49 +60,65 @@ tela.config(menu=barra_menus)
 
 pasta_inicial = ""
 
-label_title = Label(tela, text="Serviços - Novo atendimento", padx=20, fg=fgColor, background=bgColor)
+label_title = Label(tela, text="Novo animal", padx=20, fg=fgColor, background=bgColor)
 label_title.place(x=380, y=10)
 
-label_nome = Label(tela, text="CPF do cliente", padx=2, fg=fgColor, background=bgColor)
-label_nome.place(x=100, y=50)
+label_cpf = Label(tela, text="CPF do Cliente", padx=2, fg=fgColor, background=bgColor)
+label_cpf.place(x=100, y=50)
 
-txt_nome = Entry(tela, width=30, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
-txt_nome.place(x=100, y=75)
-
-
-label_cpf = Label(tela, text="Nome do animal", padx=2, fg=fgColor, background=bgColor)
-label_cpf.place(x=355, y=50)
-
-txt_cpf = Entry(tela, width=28, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
-txt_cpf.place(x=355, y=75)
+txt_cpf = Entry(tela, width=40, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
+txt_cpf.place(x=100, y=75)
 
 
-label_duracao = Label(tela, text="Duração", padx=2, fg=fgColor, background=bgColor)
-label_duracao.place(x=600, y=50)
+label_nome = Label(tela, text="Nome do animal", padx=2, fg=fgColor, background=bgColor)
+label_nome.place(x=440, y=50)
 
-txt_duracao = Entry(tela, width=12, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
-txt_duracao.place(x=600, y=75)
-
-
-label_descricao = Label(tela, text="Descrição", padx=2, fg=fgColor, background=bgColor)
-label_descricao.place(x=100, y=110)
-
-txt_descricao = Entry(tela, width=60, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
-txt_descricao.place(x=100, y=135)
+txt_nome = Entry(tela, width=33, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
+txt_nome.place(x=440, y=75)
 
 
-label_horainicio = Label(tela, text="Horário de início", padx=2, fg=fgColor, background=bgColor)
-label_horainicio.place(x=100, y=170)
+label_deficiencia = Label(tela, text="Deficiências", padx=2, fg=fgColor, background=bgColor)
+label_deficiencia.place(x=100, y=110)
 
-txt_horainicio = Entry(tela, width=15, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
-txt_horainicio.place(x=100, y=195)
+txt_deficiencia = Entry(tela, width=40, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
+txt_deficiencia.place(x=100, y=135)
 
 
-label_preco = Label(tela, text="Preço", padx=2, fg=fgColor, background=bgColor)
-label_preco.place(x=240, y=170)
+label_intolerancia = Label(tela, text="Intolerâncias", padx=2, fg=fgColor, background=bgColor)
+label_intolerancia.place(x=440, y=110)
 
-txt_preco = Entry(tela, width=15, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
-txt_preco.place(x=240, y=195)
+txt_intolerancia = Entry(tela, width=33, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
+txt_intolerancia.place(x=440, y=135)
+
+
+label_datanasc = Label(tela, text="Dt. de Nascimento", padx=2, fg=fgColor, background=bgColor)
+label_datanasc.place(x=100, y=170)
+
+txt_datanasc = Entry(tela, width=22, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
+txt_datanasc.place(x=100, y=195)
+
+
+label_idade = Label(tela, text="Idade aprox. (anos)", padx=2, fg=fgColor, background=bgColor)
+label_idade.place(x=300, y=170)
+
+txt_idade_anos = Entry(tela, width=15, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
+txt_idade_anos.place(x=300, y=195)
+
+
+label_idade_meses = Label(tela, text="Idade aprox. (meses)", padx=2, fg=fgColor, background=bgColor)
+label_idade_meses.place(x=440, y=170)
+
+txt_idade_meses = Entry(tela, width=15, bd=0, fg=textColor, bg=inputBgColor, takefocus=0)
+txt_idade_meses.place(x=440, y=195)
+
+
+label_sexo = Label(tela, text="Sexo", padx=2, fg=fgColor, background=bgColor)
+label_sexo.place(x=600, y=170)
+
+rdb_buttonm = Radiobutton(tela, text="M", variable=var, value="m", bg=inputBgColor)
+rdb_buttonf = Radiobutton(tela, text="F", variable=var, value="f", bg=inputBgColor)
+rdb_buttonm.place(x=600, y=195)
+rdb_buttonf.place(x=650, y=195)
 
 
 btn_salvar = Button(tela, text="Salvar", width=10, bd=0, fg=textColor, bg=inputBgColor)

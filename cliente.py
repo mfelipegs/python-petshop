@@ -30,6 +30,9 @@ def abrir_tela_servicos():
 def abrir_tela_animais():
     subprocess.run([comando, "animais.py"])
 
+def abrir_tela_menu():
+    subprocess.run([comando, "tela_inicial.py"])
+
 barra_menus = Menu(tela)
 
 opcoes_menus_menu = Menu(barra_menus)
@@ -47,6 +50,7 @@ opcoes_menus_gestao.add_command(label="Clientes", command=abrir_tela_clientes)
 opcoes_menus_gestao.add_command(label="Animais", command=abrir_tela_animais)
 opcoes_menus_gestao.add_command(label="Servicos", command=abrir_tela_servicos)
 
+opcoes_menus_menu.add_command(label="Home", command=abrir_tela_menu)
 opcoes_menus_menu.add_command(label="Sair", command=tela.quit)
 
 tela.config(menu=barra_menus)
