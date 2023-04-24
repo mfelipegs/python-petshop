@@ -1,5 +1,5 @@
 from tkinter import *
-from PIL import Image, ImageTk
+from PIL import Image
 tela = Tk()
 tela.title("Pet Shop's Dog's")
 tela.resizable(True, True)
