@@ -1,4 +1,7 @@
 from tkinter import *
+import subprocess
+from sys import platform
+
 tela = Tk()
 tela.title("Pet Shop's Dog's")
 tela.resizable(True, True)
@@ -32,7 +35,19 @@ txt_senha.place(x=100, y=125)
 #txt_senha.configure({"background": InputBgColor})
 #txt_senha.insert(0, "")
 
-btn_logar = Button(tela, text="Entrar", width=19, bd=0, fg=textColor, bg=inputBgColor)
+if platform == "linux":
+    # linux
+    comando = "python3"
+elif platform == "win32":
+    # Windows...
+    comando = "python"
+
+def abrir_tela_menu():
+    if txt_usuario.get() == 'admin' and txt_senha.get() == 'admin':
+        subprocess.run([comando, "tela_inicial.py"])
+        tela.quit()
+
+btn_logar = Button(tela, text="Entrar", width=19, bd=0, fg=textColor, bg=inputBgColor, command=abrir_tela_menu)
 btn_logar.place(x=120, y=175)
 
 
